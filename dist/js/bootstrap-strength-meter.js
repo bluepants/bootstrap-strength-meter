@@ -23,6 +23,9 @@
                 passwordScore: {
                     options: [],
                     append: true
+                },
+                updateCallback: function() {
+
                 }
             };
 
@@ -69,6 +72,8 @@
                  * @param {string} value
                  */
                 update: function(value) {
+                    settings.updateCallback(value);
+
                     var width = Math.floor((value/settings.base)*100);
 
                     if (width > 100) {
@@ -87,6 +92,7 @@
                                     .addClass(settings.hierarchy[value]);
                         }
                     }
+
                 },
 
                 /**
@@ -119,6 +125,9 @@
                 passwordScore: {
                     options: [],
                     append: true
+                },
+                updateCallback: function() {
+                    
                 }
             };
 
@@ -144,6 +153,8 @@
                  * @param {string} value
                  */
                 update: function(value) {
+                    settings.updateCallback(value);
+
                     for (var border in settings.hierarchy) {
                          if (value >= border) {
                              var text = settings.hierarchy[border][1];
@@ -154,6 +165,7 @@
                                 .addClass(color);
                          }
                     }
+                    
                 },
 
                 /**
@@ -194,6 +206,9 @@
                 passwordScore: {
                     options: [],
                     append: true
+                },
+                updateCallback: function() {
+                    
                 }
             };
 
@@ -221,6 +236,8 @@
                  * @param {string} value
                  */
                 update: function(value) {
+                    settings.updateCallback(value);
+
                     for (var border in settings.hierarchy) {
                          if (value >= border) {
                              var text = settings.hierarchy[border];
@@ -229,6 +246,7 @@
                                     .tooltip('show');
                          }
                     }
+                    
                 },
 
                 /**
